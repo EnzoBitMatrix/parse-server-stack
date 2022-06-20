@@ -1,5 +1,4 @@
 # Stokies Parse Server Stack
-## Introduction
 Welcome to the Stokies Parse Server Stack!  This stack will guide you through building your Parse Server with the following features:
 - CyberPanel hosting control panel
 - LetsEncrypt SSL certificates
@@ -19,5 +18,5 @@ Welcome to the Stokies Parse Server Stack!  This stack will guide you through bu
 - 1 GB RAM, 1 vCPU, 40GB SSD, 1TB transfer
 - Static IP address
 
-# Installation
-## Hardware
+# Tutorial
+The tutorial for these files is hosted on YouTube.
