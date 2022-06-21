@@ -6,6 +6,6 @@
 1. `sudo apt-get update && sudo apt-get uprgrade -y`
 2. `sudo reboot`
 
-## CyberPanel Instal
+## CyberPanel Install
 1. `sudo -i`
 2. `sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh)`
