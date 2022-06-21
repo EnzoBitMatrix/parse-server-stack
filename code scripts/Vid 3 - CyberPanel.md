@@ -1,3 +1,3 @@
 ## Update your Ubuntu Server
 
-`sudo apt-get update && sudo apt-get uprgrade -y`
+1. `sudo apt-get update && sudo apt-get uprgrade -y`
