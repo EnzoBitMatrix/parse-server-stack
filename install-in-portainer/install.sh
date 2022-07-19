@@ -6,25 +6,25 @@ echo "----------------------------------"
 echo ""
 read -p "What is the name of the directory you would like to install parse into? " direct
 echo ""
-echo " [NOTE] Creating directory /home/$direct"
+echo "[MKAS] Creating directory /home/$direct"
 mkdir /home/$direct >/dev/null
 cd /home/$direct >/dev/null
-echo " [NOTE] Updating Server"
+echo "[MKAS] Updating Server"
 apt-get update && apt-get upgrade -y >/dev/null
-echo " [NOTE] Installing support applications"
-apt-get install -y git nano wget curl >/dev/null
-echo " [NOTE] Installing Nodesource"
+echo "[MKAS] Installing support applications"
+apt-get install -y git nano wget curl systemctl apt-utils >/dev/null
+echo "[MKAS] Installing Nodesource"
 curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && bash nodesource_setup.sh >/dev/null
-echo " [NOTE] Installing support applications"
+echo "[MKAS] Installing support applications"
 apt-get install -y nodejs build-essential >/dev/null
-echo " [NOTE] Installing Database"
+echo "[MKAS] Installing Database"
 apt-get update >/dev/null
 apt-get install -y mongodb --allow-unauthenticated >/dev/null
 systemctl enable mongodb >/dev/null
-echo " [NOTE] Installing Parse Server"
+echo "[MKAS] Installing Parse Server"
 npm install -g pm2 >/dev/null
 echo ""
-echo " [*** ACTION REQUIRED ***] Please follow the onscreen instructions"
+echo "[*** ACTION REQUIRED ***] Please follow the onscreen instructions"
 echo ""
 npm init
 echo ""
@@ -51,7 +51,8 @@ echo "[-] Installed Mongo Database"
 echo "[-] Installed Parse Server and pm2"
 echo ""
 echo "*** NEXT STEPS ***"
-echo "* Create Mondo DB user"
-echo "* Edit index.js for Parse"
-echo "* Run Parse Server"
+echo "[*] Create Mondo DB user"
+echo "[*] Edit index.js for Parse"
+echo "[*] Run Parse Server"
 echo ""
+read -p "Press Enter to exit the installer" finished
