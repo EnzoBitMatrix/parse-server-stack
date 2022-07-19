@@ -14,7 +14,7 @@ echo "[MKAS] Updating Server"
 apt-get update && apt-get upgrade -y >/dev/null
 echo ""
 echo "[MKAS] Installing support applications"
-apt-get install -y git nano wget curl systemctl apt-utils >/dev/null
+apt-get install -y git nano wget curl systemd systemctl apt-utils >/dev/null
 echo ""
 echo "[MKAS] Installing Nodesource"
 curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && bash nodesource_setup.sh >/dev/null
