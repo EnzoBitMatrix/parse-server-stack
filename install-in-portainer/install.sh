@@ -5,16 +5,6 @@ echo "MKAS Parse Installer for Portainer"
 echo "----------------------------------"
 echo ""
 read -p "What is the name of the directory you would like to install parse into? " direct
-read -p "What is your Parse Application Name? " appName
-read -p "What is your Parse Application ID? " appId
-read -p "What is your Parse Master Key? " masterKey
-read -p "What is your Parse Rest API Key? " restAPIKey
-read -p "What is your Parse Server URL? eg https://api.domain.com:1337/parse " serverURL
-read -p "What is your Public Server URL? eg https://api.domain.com" publicServerURL
-read -p "What is your SMTP Host? " SMTP_HOST
-read -p "What is your SMTP Password? " SMTP_PASS
-read -p "What is your SMTP User? " SMTP_USER
-read -p "What is your Email From Name? " FROM_NAME
 echo ""
 echo " [NOTE] Creating directory /home/$direct"
 mkdir /home/$direct
@@ -45,15 +35,17 @@ echo " [NOTE] Continuing Install"
 npm install --save express parse-server parse-smtp-template
 mkdir cloud
 clear
-echo " [NOTE] Configuring Parse"
-echo 'const express = require('express');' >> index.js
-echo 'const ParseServer = require('parse-server').ParseServer;' >> index.js
-echo 'const app = express();' >> index.js
-echo 'const fs = require('fs');' >> index.js
-echo 'const port = 1337;' >> index.js
-echo 'const api = new ParseServer({' >> index.js
-echo '    appName: '$appName',' >> index.js
-echo '    databaseURI: 'mongodb://admin:password@localhost:27017/admin',' >> index.js
-echo '    appId: '$appId',' >> index.js
-clear
 echo " [MORE TO DO] We have done all we can. The rest is up to you."
+echo ""
+echo "[-] Created directories"
+echo "[-] Updated and Upgraded APT"
+echo "[-] Installed nano, wget, and CURL"
+echo "[-] Installed Nodesource 16.x"
+echo "[-] Installed NodeJS"
+echo "[-] Installed Mongo Database"
+echo "[-] Installed Parse Server and pm2"
+echo ""
+echo "*** NEXT STEPS ***"
+echo "* Create Mondo DB user"
+echo "* Edit index.js for Parse"
+echo "* Run Parse Server"
