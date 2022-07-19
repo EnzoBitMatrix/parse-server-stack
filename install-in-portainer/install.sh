@@ -9,24 +9,31 @@ echo ""
 echo "[MKAS] Creating directory /home/$direct"
 mkdir /home/$direct >/dev/null
 cd /home/$direct >/dev/null
+echo ""
 echo "[MKAS] Updating Server"
 apt-get update && apt-get upgrade -y >/dev/null
+echo ""
 echo "[MKAS] Installing support applications"
 apt-get install -y git nano wget curl systemctl apt-utils >/dev/null
+echo ""
 echo "[MKAS] Installing Nodesource"
 curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && bash nodesource_setup.sh >/dev/null
+echo ""
 echo "[MKAS] Installing NodeJS"
 apt-get install -y nodejs build-essential >/dev/null
+echo ""
 echo "[MKAS] Installing Database"
 apt-get update >/dev/null
 apt-get install -y mongodb --allow-unauthenticated >/dev/null
 systemctl enable mongodb >/dev/null
+echo ""
 echo "[MKAS] Installing Parse Server"
 npm install -g pm2 >/dev/null
 echo ""
 echo "[*** ACTION REQUIRED ***] Please follow the onscreen instructions"
 echo ""
 npm init
+clear
 echo ""
 echo " [NOTE] Continuing Install"
 npm install --save express parse-server parse-smtp-template >/dev/null
