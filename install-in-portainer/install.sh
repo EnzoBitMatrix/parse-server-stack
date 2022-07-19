@@ -15,7 +15,7 @@ echo "[MKAS] Installing support applications"
 apt-get install -y git nano wget curl systemctl apt-utils >/dev/null
 echo "[MKAS] Installing Nodesource"
 curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && bash nodesource_setup.sh >/dev/null
-echo "[MKAS] Installing support applications"
+echo "[MKAS] Installing NodeJS"
 apt-get install -y nodejs build-essential >/dev/null
 echo "[MKAS] Installing Database"
 apt-get update >/dev/null
