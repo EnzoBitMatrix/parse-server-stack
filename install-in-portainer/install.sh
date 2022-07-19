@@ -34,7 +34,15 @@ npm init
 echo " [NOTE] Continuing Install"
 npm install --save express parse-server parse-smtp-template
 mkdir cloud
+wget https://raw.githubusercontent.com/EnzoBitMatrix/parse-server-stack/main/install-in-portainer/index.js
+wget https://raw.githubusercontent.com/EnzoBitMatrix/parse-server-stack/main/install-in-portainer/main.html
+cd /home/$direct/node_modules/parse-smtp-template/templates
+rm main.html
+wget https://raw.githubusercontent.com/EnzoBitMatrix/parse-server-stack/main/install-in-portainer/main.html
+cd /home/$direct/cloud
+wget https://raw.githubusercontent.com/EnzoBitMatrix/parse-server-stack/main/install-in-portainer/cloud/main.js
 clear
+cd /home/$direct
 echo " [MORE TO DO] We have done all we can. The rest is up to you."
 echo ""
 echo "[-] Created directories"
