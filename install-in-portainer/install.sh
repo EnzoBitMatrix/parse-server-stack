@@ -31,6 +31,7 @@ npm install -g pm2
 clear
 echo " [*** ACTION REQUIRED ***] Please follow the onscreen instructions"
 npm init
+clear
 echo " [NOTE] Continuing Install"
 npm install --save express parse-server parse-smtp-template
 mkdir cloud
