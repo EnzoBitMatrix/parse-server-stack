@@ -62,4 +62,4 @@ echo "[*] Create Mondo DB user"
 echo "[*] Edit index.js for Parse"
 echo "[*] Run Parse Server"
 echo ""
-read -p "Press Enter to exit the installer" finished
+read -p "Press Enter to exit the installer " finished
