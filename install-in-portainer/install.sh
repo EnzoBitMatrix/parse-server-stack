@@ -7,44 +7,40 @@ echo ""
 read -p "What is the name of the directory you would like to install parse into? " direct
 echo ""
 echo " [NOTE] Creating directory /home/$direct"
-mkdir /home/$direct
-cd /home/$direct
-echo " [NOTE] Installing Updating Server"
-apt-get update && apt-get upgrade -y
-clear
+mkdir /home/$direct >/dev/null
+cd /home/$direct >/dev/null
+echo " [NOTE] Updating Server"
+apt-get update && apt-get upgrade -y >/dev/null
 echo " [NOTE] Installing support applications"
-apt-get install -y git nano wget curl
-clear
+apt-get install -y git nano wget curl >/dev/null
 echo " [NOTE] Installing Nodesource"
-curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && bash nodesource_setup.sh
-clear
+curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && bash nodesource_setup.sh >/dev/null
 echo " [NOTE] Installing support applications"
-apt-get install -y nodejs build-essential
-clear
+apt-get install -y nodejs build-essential >/dev/null
 echo " [NOTE] Installing Database"
-apt-get update
-apt-get install -y mongodb --allow-unauthenticated
-systemctl enable mongodb
-clear
+apt-get update >/dev/null
+apt-get install -y mongodb --allow-unauthenticated >/dev/null
+systemctl enable mongodb >/dev/null
 echo " [NOTE] Installing Parse Server"
-npm install -g pm2
-clear
+npm install -g pm2 >/dev/null
+echo ""
 echo " [*** ACTION REQUIRED ***] Please follow the onscreen instructions"
+echo ""
 npm init
-clear
+echo ""
 echo " [NOTE] Continuing Install"
-npm install --save express parse-server parse-smtp-template
-mkdir cloud
-wget https://raw.githubusercontent.com/EnzoBitMatrix/parse-server-stack/main/install-in-portainer/index.js
-wget https://raw.githubusercontent.com/EnzoBitMatrix/parse-server-stack/main/install-in-portainer/main.html
-cd /home/$direct/node_modules/parse-smtp-template/templates
-rm main.html
-wget https://raw.githubusercontent.com/EnzoBitMatrix/parse-server-stack/main/install-in-portainer/main.html
-cd /home/$direct/cloud
-wget https://raw.githubusercontent.com/EnzoBitMatrix/parse-server-stack/main/install-in-portainer/cloud/main.js
+npm install --save express parse-server parse-smtp-template >/dev/null
+mkdir cloud >/dev/null
+wget https://raw.githubusercontent.com/EnzoBitMatrix/parse-server-stack/main/install-in-portainer/index.js >/dev/null
+wget https://raw.githubusercontent.com/EnzoBitMatrix/parse-server-stack/main/install-in-portainer/main.html >/dev/null
+cd /home/$direct/node_modules/parse-smtp-template/templates >/dev/null
+rm main.html >/dev/null
+wget https://raw.githubusercontent.com/EnzoBitMatrix/parse-server-stack/main/install-in-portainer/main.html >/dev/null
+cd /home/$direct/cloud >/dev/null
+wget https://raw.githubusercontent.com/EnzoBitMatrix/parse-server-stack/main/install-in-portainer/cloud/main.js >/dev/null
 clear
 cd /home/$direct
-echo " [MORE TO DO] We have done all we can. The rest is up to you."
+echo "[MORE TO DO] We have done all we can. The rest is up to you."
 echo ""
 echo "[-] Created directories"
 echo "[-] Updated and Upgraded APT"
@@ -58,3 +54,4 @@ echo "*** NEXT STEPS ***"
 echo "* Create Mondo DB user"
 echo "* Edit index.js for Parse"
 echo "* Run Parse Server"
+echo ""
